@@ -46,6 +46,10 @@
       "type": "build"
     },
     {
+      "name": "git-cz",
+      "type": "build"
+    },
+    {
       "name": "jest",
       "type": "build"
     },
