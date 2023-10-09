@@ -25,6 +25,8 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   devDeps: [
     'git-cz',
     'husky',
+    '@commitlint/config-conventional',
+    '@commitlint/cli',
   ],
   // packageName: undefined,  /* The "name" in package.json. */
 });
