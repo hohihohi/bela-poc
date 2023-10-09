@@ -24,7 +24,15 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   /* Build dependencies for this module. */
   devDeps: [
     'git-cz',
+    'husky',
   ],
   // packageName: undefined,  /* The "name" in package.json. */
 });
+
+// Adding an extra custom task
+project.addScripts({
+  prepare: 'husky install',
+});
+project.package.addField('config', { commitizen: { path: 'git-cz' } } );
+
 project.synth();
