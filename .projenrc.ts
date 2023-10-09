@@ -28,6 +28,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     '@commitlint/config-conventional',
     '@commitlint/cli',
   ],
+  dependabot: true,
   // packageName: undefined,  /* The "name" in package.json. */
 });
 
