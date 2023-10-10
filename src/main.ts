@@ -1,8 +1,8 @@
-import { App, Stack, StackProps } from "aws-cdk-lib";
+import * as aws_cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-export class MyStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps = {}) {
+export class MyStack extends aws_cdk.Stack {
+  constructor(scope: Construct, id: string, props: aws_cdk.StackProps = {}) {
     super(scope, id, props);
 
     // define resources here...
@@ -15,7 +15,7 @@ const devEnv = {
   region: process.env.CDK_DEFAULT_REGION,
 };
 
-const app = new App();
+const app = new aws_cdk.App();
 
 new MyStack(app, "bela-poc-dev", { env: devEnv });
 // new MyStack(app, 'bela-poc-prod', { env: prodEnv });
