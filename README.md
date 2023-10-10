@@ -116,6 +116,10 @@ This is an example of how to list things you need to use the software and how to
   npm install -g commitizen
   git-cz --disable-emoji
   ```
+* install [git-secrets](https://github.com/awslabs/git-secrets)
+  ```sh
+  git secrets --register-aws --global
+  ```
 
 ### Installation
 
