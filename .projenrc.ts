@@ -36,9 +36,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
 // Adding an extra custom task
 project.addScripts({
   prepare: "husky install",
+  commit: "git-cz --disable-emoji",
 });
 project.package.addField("config", {
-  commitizen: { path: "git-cz --disable-emoji" },
+  commitizen: { path: "git-cz" },
 });
 
 project.synth();
