@@ -1,7 +1,12 @@
 export class ResourceNamingConvention {
-  static readonly AVAILABLE_ENV_LIST = ["Dev", "Stg", "Prod", "Management"];
-  readonly systemEnv: string;
-  readonly systemService: string;
+  public static readonly AVAILABLE_ENV_LIST = [
+    "Dev",
+    "Stg",
+    "Prod",
+    "Management",
+  ];
+  private readonly systemEnv: string;
+  private readonly systemService: string;
   constructor(systemName: string, systemEnv: string) {
     this.validate(systemName);
     this.systemEnv = systemEnv;
