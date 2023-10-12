@@ -1,6 +1,23 @@
 import * as aws_cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
+import { managementParameter } from "./parameter";
 
+// App
+const app = new aws_cdk.App();
+
+// Extract deploy environment names from context
+const envNames = new aws_cdk.CfnParameter(app, "EnvNames", {
+  type: "String[]",
+  description:
+    "The name of the Amazon S3 bucket where uploaded files will be stored.",
+  default: [managementParameter.envName],
+});
+const allParams = [managementParameter];
+const envParams = allParams.filter((param) =>
+  envNames.valueAsList.includes(param.envName),
+);
+
+// Stack
 export class MyStack extends aws_cdk.Stack {
   constructor(scope: Construct, id: string, props: aws_cdk.StackProps = {}) {
     super(scope, id, props);
@@ -8,16 +25,7 @@ export class MyStack extends aws_cdk.Stack {
     // define resources here...
   }
 }
+new MyStack(app, "bela-poc-dev", ...envParams);
 
-// for development, use account/region from cdk cli
-const devEnv = {
-  account: process.env.CDK_DEFAULT_ACCOUNT,
-  region: process.env.CDK_DEFAULT_REGION,
-};
-
-const app = new aws_cdk.App();
-
-new MyStack(app, "bela-poc-dev", { env: devEnv });
-// new MyStack(app, 'bela-poc-prod', { env: prodEnv });
-
-app.synth();
+// NOTE: It's not necessary to call `app.synth()` here because our all Construct don't have "synthesize" method
+// app.synth();
