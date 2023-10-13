@@ -7,16 +7,11 @@ const app = new aws_cdk.App();
 aws_cdk.Tags.of(app).add("App", "bela-poc");
 
 // Extract deploy environment names from context
-const envNames = new aws_cdk.CfnParameter(app, "EnvNames", {
-  type: "String[]",
-  description:
-    "The name of the Amazon S3 bucket where uploaded files will be stored.",
-  default: [managementParameter.envName],
-});
+// const env_arg: string[] = `${app.node.tryGetContext("env_names")}`.split(",");
+const env_arg: string[] = `${app.node.tryGetContext("env_names")}`.split(",");
+const envNames = env_arg.length > 0 ? env_arg : [managementParameter.envName];
 const allParams = [managementParameter];
-const envParams = allParams.filter((param) =>
-  envNames.valueAsList.includes(param.envName),
-);
+const envParams = allParams.filter((param) => envNames.includes(param.envName));
 
 // Stack
 export class MyStack extends aws_cdk.Stack {
