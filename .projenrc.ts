@@ -30,7 +30,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   ],
   dependabot: true,
   prettier: true,
-  appEntrypoint: "src/app.ts",
+  appEntrypoint: "app.ts",
   // packageName: undefined,  /* The "name" in package.json. */
 });
 
