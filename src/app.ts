@@ -4,6 +4,7 @@ import { managementParameter } from "./parameter";
 
 // App
 const app = new aws_cdk.App();
+aws_cdk.Tags.of(app).add("App", "bela-poc");
 
 // Extract deploy environment names from context
 const envNames = new aws_cdk.CfnParameter(app, "EnvNames", {
@@ -25,7 +26,8 @@ export class MyStack extends aws_cdk.Stack {
     // define resources here...
   }
 }
-new MyStack(app, "bela-poc-dev", ...envParams);
+const mystack = new MyStack(app, "bela-poc-dev", ...envParams);
+aws_cdk.Tags.of(mystack).add("Stack", "bela-poc-dev");
 
 // NOTE: It's not necessary to call `app.synth()` here because our all Construct don't have "synthesize" method
 // app.synth();
