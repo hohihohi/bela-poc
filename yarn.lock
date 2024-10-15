@@ -1756,9 +1756,9 @@ concat-map@0.0.1:
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
 constructs@^10.0.5:
-  version "10.3.2"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.3.2.tgz#63ddc596cb78e509ea8944ea9aa92f842813b16e"
-  integrity sha512-odjsmhoBKRWa2F/Z3edOSZCb7IgxAL5usXQMRKoINMJzcFfC1GvcbO6Dd/xMGLRv4J/tEsjSLwqLxRfJrjPsQw==
+  version "10.4.2"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.4.2.tgz#e875a78bef932cca12ea63965969873a25c1c132"
+  integrity sha512-wsNxBlAott2qg8Zv87q3eYZYgheb9lchtBfjHzzLHtXbttwSrHPs1NNQbBrmbb1YZvYg2+Vh0Dor76w4mFxJkA==
 
 conventional-changelog-angular@^6.0.0:
   version "6.0.0"
