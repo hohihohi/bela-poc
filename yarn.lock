@@ -1460,9 +1460,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 aws-cdk-lib@^2.1.0:
-  version "2.167.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.167.0.tgz#7f2a8534a5054155e3a03f9d695ef5b8a60c14a8"
-  integrity sha512-q8bHxUUnMGfHe4TWQHYUu4eqdy9qkEWuml3vOnZINF3l9XdKOo/S5grsyVzFAjjBjwCH8zAxKicNT0uhwBjqLg==
+  version "2.169.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.169.0.tgz#555e5adf078ef5816070d5a822586044fcd1337f"
+  integrity sha512-JBwXMZNkXLCyIJmyK6HcA5UDaYYmJhQ0+ZmE10uTgNTqo/7lZpXYyQYES0SWGM4XrR18lFcH73RmHSAaoEyQhw==
   dependencies:
     "@aws-cdk/asset-awscli-v1" "^2.2.208"
     "@aws-cdk/asset-kubectl-v20" "^2.1.3"
